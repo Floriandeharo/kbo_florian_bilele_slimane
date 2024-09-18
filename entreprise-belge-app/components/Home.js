@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, FlatList, Text, StyleSheet, Alert } from 'react-native';
  
-const API_BASE_URL = 'http://192.168.1.10:5000'; // Remplace par l'IP de ton serveur
+const API_BASE_URL = 'http://localhost:5000'; // Remplace par l'IP de ton serveur
  
 const Home = () => {
   const [searchText, setSearchText] = useState('');
@@ -17,18 +17,8 @@ const Home = () => {
     }
  
     setLoading(true);
-    let endpoint = '';
- 
-    // Construire l'endpoint de l'API en fonction du type de recherche
-    if (searchType === 'companyNumber') {
-      endpoint = `/api/search/companyNumber/${searchText}`;
-    } else if (searchType === 'name') {
-      endpoint = `/api/search/name/${searchText}`;
-    } else if (searchType === 'activity') {
-      endpoint = `/api/search/activity?activityGroup=${searchText}`;
-    } else if (searchType === 'address') {
-      endpoint = `/api/search/address?city=${searchText}`;
-    }
+    let endpoint = `/api/search/name/${searchText}`;
+   
  
     try {
       const response = await fetch(`${API_BASE_URL}${endpoint}`);

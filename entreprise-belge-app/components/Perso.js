@@ -1,15 +1,13 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';  // Import de useNavigation
+import { useNavigation } from '@react-navigation/native';  
  
 const Perso = () => {
-  const navigation = useNavigation();  // Utilisation de la navigation
+  const navigation = useNavigation(); 
  
   return (
 <View style={styles.container}>
 <Text style={styles.text}>Bienvenue sur la page Perso</Text>
-      {/* Bouton pour naviguer vers la page Home */}
-<Button title="Accueil" onPress={() => navigation.navigate('Home')} />
 </View>
   );
 };
@@ -24,7 +22,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 20, // Ajout d'espace avant le bouton
+    marginBottom: 20, 
   },
 });
  
